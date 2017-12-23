@@ -7,14 +7,17 @@ public class PalindromApp {
 		Palindrom text2 = new Palindrom("kajak !?");
 		String txt = "Iwono, ty rabuj okop spokoju barytonowi";
 		Palindrom text3 = new Palindrom(txt);
-		// bug w przypadku zastosowania znaku -
+		// bug w przypadku zastosowania znaku - zosta³ naprawiony
 		String txt2 = "ale ma palac - oto cala Pamela";
 		Palindrom text4 = new Palindrom(txt2);
-		System.out.println(text1.getTextToCheck() + " is palindrom?: " + text1.check());
-		System.out.println(text2.getTextToCheck() + " is palindrom?: " + text2.check());
-		System.out.println(text3.getTextToCheck() + " is palindrom?: " + text3.check());
-		// zwraca false
-		System.out.println(text4.getTextToCheck() + " is palindrom?: " + text4.check());
+		Palindrom text5 = new Palindrom("example");
+		System.out.println("Is \'"+text1.getTextToCheck() + "\' a palindrom?: " + text1.check());
+		System.out.println("Is \'"+text2.getTextToCheck() + "\' a palindrom?: " + text2.check());
+		System.out.println("Is \'"+text3.getTextToCheck() + "\' a palindrom?: " + text3.check());
+		// zwraca true
+		System.out.println("Is \'"+text4.getTextToCheck() + "\' a palindrom?: " + text4.check());
+		System.out.println("Is \'"+text5.getTextToCheck() + "\' a palindrom?: " + text5.check());
+
 	}
 
 }
