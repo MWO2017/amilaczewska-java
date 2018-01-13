@@ -53,7 +53,10 @@ public class TicTacToe {
 			moveNr++;
 			isEmpty = true;
 		} else {
-			System.out.println("The filed is not empty. Try different field");
+			
+			if (moveNr % 2 != 0) {
+				System.out.println("The filed is not empty. Try different field");
+			}
 			isEmpty = false;
 		}
 		

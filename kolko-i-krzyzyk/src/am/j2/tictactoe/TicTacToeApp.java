@@ -7,22 +7,27 @@ import java.util.Random;
 public class TicTacToeApp {
 
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String answer="y";
 
-		System.out.println("this is a game TicTacToe\nYou will play against computer");
-		final TicTacToe playTTT = new TicTacToe();
-		String winner = null;
-		playTTT.makeEmptyBoard();
-		playTTT.printBoard();
-		while (playTTT.isNotWinner(winner)) {
-			makeMove(playTTT);
-			winner = playTTT.checkWhoWon();
+		while (answer.equals("y") || answer.equals("Y")) {
+			System.out.println("this is a game TicTacToe\nYou will play against computer");
+			final TicTacToe playTTT = new TicTacToe();
+			String winner = null;
+			playTTT.makeEmptyBoard();
 			playTTT.printBoard();
+			while (playTTT.isNotWinner(winner)) {
+				makeMove(playTTT);
+				winner = playTTT.checkWhoWon();
+				playTTT.printBoard();
+			}
+			playTTT.printBoard();
+			System.out.println("The winner is: " + winner);
+			System.out.println("Congrats!\n");
+			System.out.println("Would you like to play again? [y/n]: ");
+			answer = scanner.next();
 		}
-
-		playTTT.printBoard();
-		System.out.println("The winner is: " + winner);
-		System.out.println("Congrats!");
-
+		System.out.println("Thanks for playing!");
 	}
 
 	public static void makeMove(TicTacToe playTTT) {
